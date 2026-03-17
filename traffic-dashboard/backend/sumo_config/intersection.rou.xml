@@ -1,0 +1,24 @@
+<routes>
+    <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="15" color="1,1,0"/>
+    <vType id="truck" accel="1.0" decel="3.5" sigma="0.5" length="12" minGap="3.0" maxSpeed="10" color="1,0,0"/>
+    <vType id="bus" accel="1.2" decel="4.0" sigma="0.5" length="10" minGap="2.8" maxSpeed="12" color="0,1,0"/>
+    
+    <!-- Straight Routes -->
+    <route id="NS" edges="N2C C2S"/>
+    <route id="SN" edges="S2C C2N"/>
+    <route id="EW" edges="E2C C2W"/>
+    <route id="WE" edges="W2C C2E"/>
+
+    <!-- Turn Routes -->
+    <route id="NE" edges="N2C C2E"/> <!-- Left turn -->
+    <route id="NW" edges="N2C C2W"/> <!-- Right turn -->
+    <route id="SE" edges="S2C C2E"/> <!-- Right turn -->
+    <route id="SW" edges="S2C C2W"/> <!-- Left turn -->
+    <route id="EN" edges="E2C C2N"/> <!-- Right turn -->
+    <route id="ES" edges="E2C C2S"/> <!-- Left turn -->
+    <route id="WN" edges="W2C C2N"/> <!-- Left turn -->
+    <route id="WS" edges="W2C C2S"/> <!-- Right turn -->
+    
+    <!-- We will use TraCI to dynamically add vehicles at runtime instead of static flows, 
+         but we need to declare the vType and routes here -->
+</routes>
