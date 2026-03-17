@@ -11,7 +11,13 @@ from fastapi.responses import FileResponse
 from dqn_agent import DQNAgent
 from database import save_simulation_snapshot, save_agent_metrics, get_recent_history, get_agent_history
 
-app = FastAPI(title="AI Traffic Node Backend")
+# Modular CV/ML Routes
+from cv.api_routes import router as cv_router
+
+app = FastAPI(title="AI Traffic Intelligence Platform")
+
+# Mount new CV/ML module
+app.include_router(cv_router)
 
 # Allow React frontend to connect
 app.add_middleware(
